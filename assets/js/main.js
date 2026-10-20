@@ -1,14 +1,23 @@
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Zacht scrollen met Lenis (niet bij 'minder beweging')
+if (window.Lenis && !reduceMotion) {
+  const lenis = new Lenis({ lerp: 0.09, anchors: { offset: -96 } });
+  const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+  requestAnimationFrame(raf);
+}
+
 // Mobiel menu
 const menuBtn = document.querySelector(".menu-btn");
-const mobileNav = document.getElementById("mobile-nav");
+const sheet = document.getElementById("sheet");
 menuBtn.addEventListener("click", () => {
-  const open = mobileNav.hidden;
-  mobileNav.hidden = !open;
+  const open = sheet.hidden;
+  sheet.hidden = !open;
   menuBtn.setAttribute("aria-expanded", String(open));
 });
-mobileNav.addEventListener("click", (e) => {
+sheet.addEventListener("click", (e) => {
   if (e.target.closest("a")) {
-    mobileNav.hidden = true;
+    sheet.hidden = true;
     menuBtn.setAttribute("aria-expanded", "false");
   }
 });
@@ -16,36 +25,20 @@ mobileNav.addEventListener("click", (e) => {
 // Carrousels
 document.querySelectorAll(".carousel").forEach((car) => {
   const track = car.querySelector(".track");
-  const slides = track.children.length;
+  const slides = [...track.children];
   const dots = car.querySelector(".dots");
-  for (let i = 0; i < slides; i++) dots.append(document.createElement("span"));
-  const current = () => Math.round(track.scrollLeft / track.clientWidth);
+  slides.forEach(() => dots.append(document.createElement("span")));
+  const step = () => slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+  const current = () => Math.min(slides.length - 1, Math.round(track.scrollLeft / step()));
   const paint = () => [...dots.children].forEach((d, i) => d.classList.toggle("on", i === current()));
   const go = (dir) => {
-    const next = (current() + dir + slides) % slides;
-    track.scrollTo({ left: next * track.clientWidth, behavior: "smooth" });
+    const next = (current() + dir + slides.length) % slides.length;
+    track.scrollTo({ left: next * step(), behavior: reduceMotion ? "auto" : "smooth" });
   };
   car.querySelector(".prev").addEventListener("click", () => go(-1));
   car.querySelector(".next").addEventListener("click", () => go(1));
   track.addEventListener("scroll", paint, { passive: true });
   paint();
 });
-
-// Kleurwisselaar: groen, terrakota of geel (alleen voor het ontwerp)
-const root = document.documentElement;
-const setAccent = (name) => {
-  if (name === "terra") delete root.dataset.accent;
-  else root.dataset.accent = name;
-  document.querySelectorAll(".switcher button").forEach((b) =>
-    b.setAttribute("aria-pressed", String(b.dataset.accent === name))
-  );
-  try { localStorage.setItem("mitsos-accent-v2", name); } catch (e) {}
-};
-document.querySelectorAll(".switcher button").forEach((b) =>
-  b.addEventListener("click", () => setAccent(b.dataset.accent))
-);
-let saved = "groen";
-try { saved = localStorage.getItem("mitsos-accent-v2") || "groen"; } catch (e) {}
-setAccent(saved);
 
 document.getElementById("year").textContent = new Date().getFullYear();

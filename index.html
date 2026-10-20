@@ -1,159 +1,210 @@
 <!doctype html>
-<html lang="nl" data-accent="groen">
+<html lang="nl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mitsos Traiterie</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Mitsos, Griekse traiteur in Amsterdam sinds 1996. Take away, eat in en catering.">
+<meta name="theme-color" content="#F8F7F2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Oswald:wght@400;500;600&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <div class="inner">
+<div class="nav-wrap">
+  <header class="nav">
     <a class="brand" href="#top" aria-label="Mitsos, naar boven">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20C10 14 14 10 20 4"/><ellipse cx="9" cy="12" rx="3.2" ry="1.4" transform="rotate(-45 9 12)" fill="currentColor"/><ellipse cx="13" cy="8.5" rx="3.2" ry="1.4" transform="rotate(-20 13 8.5)" fill="currentColor"/><ellipse cx="14" cy="14" rx="3.2" ry="1.4" transform="rotate(-70 14 14)" fill="currentColor"/></svg>
       MITSOS
     </a>
-    <nav class="nav" aria-label="Hoofdmenu">
+    <nav class="nav-links" aria-label="Hoofdmenu">
       <a href="#traiteur">Traiteur</a>
-      <a href="#eat-in">Eat in &amp; take away</a>
+      <a href="#eat-in">Eat in</a>
       <a href="#catering">Catering</a>
-      <a href="#contact">Contact</a>
+      <a href="#bezoek">Bezoek</a>
     </nav>
-    <button class="menu-btn" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-nav">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    <a class="btn primary order" href="#bezoek">Bestellen</a>
+    <button class="menu-btn" aria-label="Menu openen" aria-expanded="false" aria-controls="sheet">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 9h14M5 15h14"/></svg>
     </button>
+  </header>
+  <div class="sheet" id="sheet" hidden>
+    <a href="#traiteur">Traiteur</a>
+    <a href="#eat-in">Eat in &amp; take away</a>
+    <a href="#catering">Catering</a>
+    <a href="#bezoek">Bezoek &amp; bestellen</a>
   </div>
-  <div class="mobile-nav" id="mobile-nav" hidden>
-    <ul class="inner">
-      <li><a href="#traiteur">Traiteur</a></li>
-      <li><a href="#eat-in">Eat in &amp; take away</a></li>
-      <li><a href="#catering">Catering</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
+</div>
 
 <main id="top">
+  <!-- HERO -->
   <section class="hero">
-    <img src="assets/img/winkel-gevel.jpg" alt="De blauwe gevel van Mitsos met tafeltjes op de stoep">
-    <div class="hero-text inner">
-      <svg class="laurel" viewBox="0 0 64 20" fill="currentColor" aria-hidden="true"><path d="M32 18C24 14 14 12 4 13" stroke="currentColor" stroke-width="1.4" fill="none"/><ellipse cx="10" cy="9" rx="4" ry="1.6" transform="rotate(-20 10 9)"/><ellipse cx="18" cy="8" rx="4" ry="1.6" transform="rotate(-10 18 8)"/><ellipse cx="26" cy="10" rx="4" ry="1.6"/><path d="M32 18C40 14 50 12 60 13" stroke="currentColor" stroke-width="1.4" fill="none"/><ellipse cx="54" cy="9" rx="4" ry="1.6" transform="rotate(20 54 9)"/><ellipse cx="46" cy="8" rx="4" ry="1.6" transform="rotate(10 46 8)"/><ellipse cx="38" cy="10" rx="4" ry="1.6"/></svg>
-      <h1>MITSOS</h1>
-      <p>Griekse traiteur · sinds 1996</p>
-    </div>
-  </section>
-
-  <section class="tiles" aria-label="Wat we doen">
-    <div class="inner grid">
-      <a class="tile" href="#traiteur"><img src="assets/img/winkel-raam.jpg" alt=""><span>Traiteur</span></a>
-      <a class="tile" href="#eat-in"><img src="assets/img/terras.jpg" alt=""><span>Eat in &amp; take away</span></a>
-      <a class="tile solid" href="#catering"><span>Catering</span></a>
-    </div>
-  </section>
-
-  <!-- TRAITEUR -->
-  <section class="section accent" id="traiteur">
-    <div class="inner split">
-      <div class="carousel">
-        <div class="track">
-          <div class="slide"><div class="ph"><div><b>Moussaka</b><small>Foto volgt</small></div></div></div>
-          <div class="slide"><div class="ph"><div><b>Spanakopita</b><small>Foto volgt</small></div></div></div>
-          <div class="slide"><div class="ph"><div><b>Meze vitrine</b><small>Foto volgt</small></div></div></div>
-          <div class="slide"><img src="assets/img/winkel-raam.jpg" alt="Etalage van Mitsos met het logo op het raam"></div>
+    <div class="inner">
+      <div class="hero-copy">
+        <span class="eyebrow">Griekse traiteur · Amsterdam</span>
+        <h1>Huisgemaakt Grieks, <em>elke dag vers.</em></h1>
+        <p class="lead">Moussaka, spanakopita, meze en gyros. Sinds 1996 koken we in de Hugo de Grootstraat zoals we het thuis doen.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="#traiteur">Bekijk de vitrine <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn soft" href="#catering">Catering</a>
         </div>
-        <button class="car-btn prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button>
-        <div class="dots"></div>
+        <div class="facts"><span>Sinds 1996</span><span>Take away &amp; eat in</span><span>Catering op maat</span></div>
       </div>
-      <div class="copy">
-        <h2>Traiteur</h2>
-        <p class="lead">Al sinds 1996 maken we elke dag Griekse gerechten zoals thuis: moussaka, pastitsio, gevulde wijnbladeren, spanakopita en een volle vitrine met meze.</p>
-        <div class="info">
-          <div>
-            <h3>Adres</h3>
-            <p>Tweede Hugo de Grootstraat 25H<br>1052 LB Amsterdam</p>
-          </div>
-          <div>
-            <h3>Openingstijden</h3>
-            <p><span class="todo">ma–za 00:00–00:00</span><br><span class="todo">zondag gesloten</span></p>
-          </div>
+      <div class="hero-media">
+        <div class="frame"><img src="assets/img/winkel-gevel.jpg" alt="De blauwe gevel van Mitsos met tafeltjes op de stoep"></div>
+        <div class="float-card">
+          <span class="eyebrow live">Vandaag in de vitrine</span>
+          <span>Moussaka · Spanakopita · Dolmades · Tzatziki</span>
         </div>
-        <div class="btns">
-          <a class="btn" href="#">Bekijk menu</a>
-          <a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Tweede+Hugo+de+Grootstraat+25H+Amsterdam">Route plannen</a>
-        </div>
-        <a class="map" href="https://www.google.com/maps/search/?api=1&query=Tweede+Hugo+de+Grootstraat+25H+Amsterdam" aria-label="Open de locatie in Google Maps">
-          <svg class="pin" viewBox="0 0 24 32" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.3 0 11.8 0 20.6 12 32 12 32s12-11.4 12-20.2C24 5.3 18.6 0 12 0zm0 16.5a4.6 4.6 0 110-9.2 4.6 4.6 0 010 9.2z"/></svg>
-          <span class="label">Amsterdam West · Open in Maps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AANBOD -->
+  <section class="offer" aria-labelledby="aanbod-titel">
+    <div class="inner">
+      <div class="head reveal">
+        <h2 id="aanbod-titel">Drie manieren om <em>bij ons</em> te eten</h2>
+      </div>
+      <div class="cards">
+        <a class="card reveal" href="#traiteur">
+          <div class="pic"><img src="assets/img/winkel-raam.jpg" alt=""></div>
+          <div class="txt"><div><h3>Traiteur</h3><p>Vers uit de vitrine</p></div><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card reveal" href="#eat-in">
+          <div class="pic"><img src="assets/img/terras.jpg" alt=""></div>
+          <div class="txt"><div><h3>Eat in</h3><p>Aan de blauwe tafeltjes</p></div><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a class="card reveal" href="#catering">
+          <div class="pic"><div class="ph"><div><b>Meze buffet</b><small>Foto volgt</small></div></div></div>
+          <div class="txt"><div><h3>Catering</h3><p>Voor elk gezelschap</p></div><span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- EAT IN & TAKE AWAY -->
-  <section class="section" id="eat-in">
-    <div class="inner split reverse">
-      <div class="carousel">
-        <div class="track">
-          <div class="slide"><img src="assets/img/terras.jpg" alt="Blauwe tafeltjes op de stoep voor Mitsos"></div>
-          <div class="slide"><div class="ph"><div><b>Pita gyros</b><small>Foto volgt</small></div></div></div>
-          <div class="slide"><div class="ph"><div><b>Souvlaki</b><small>Foto volgt</small></div></div></div>
+  <!-- TRAITEUR -->
+  <section class="block" id="traiteur">
+    <div class="inner">
+      <div class="panel sage split reveal">
+        <div class="carousel">
+          <div class="track">
+            <div class="slide"><div class="ph"><div><b>Moussaka</b><small>Foto volgt</small></div></div></div>
+            <div class="slide"><div class="ph"><div><b>Spanakopita</b><small>Foto volgt</small></div></div></div>
+            <div class="slide"><div class="ph"><div><b>Dolmades</b><small>Foto volgt</small></div></div></div>
+            <div class="slide"><img src="assets/img/winkel-raam.jpg" alt="Etalage van Mitsos met het logo op het raam"></div>
+          </div>
+          <div class="car-ui">
+            <div class="dots"></div>
+            <div class="car-btns">
+              <button class="car-btn prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
         </div>
-        <button class="car-btn prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button>
-        <div class="dots" style="color: var(--navy)"></div>
+        <div class="copy">
+          <span class="eyebrow">Traiteur</span>
+          <h2>De vitrine, <em>elke ochtend</em> opnieuw gevuld</h2>
+          <p class="lead">Ovenschotels, gevulde groenten, salades en meze. Alles wordt bij ons in de keuken gemaakt, met olijfolie, oregano en de recepten van de familie.</p>
+          <div class="chips"><span>Moussaka</span><span>Pastitsio</span><span>Gemista</span><span>Tzatziki</span><span>Baklava</span></div>
+          <div class="btn-row">
+            <a class="btn primary" href="#">Bekijk het menu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div class="copy">
-        <h2>Eat in &amp; take away</h2>
-        <p class="lead">Neem plaats aan een van onze blauwe tafeltjes op de stoep, of neem je bord mee naar huis.</p>
-        <p>Pita gyros, souvlaki en de schotels uit de vitrine: alles maken we zelf, met olijfolie, oregano en de recepten van de familie.</p>
-        <div class="chips" aria-label="Populair">
-          <span>Moussaka</span><span>Pita gyros</span><span>Tzatziki</span><span>Dolmades</span><span>Baklava</span>
+    </div>
+  </section>
+
+  <!-- EAT IN -->
+  <section class="block" id="eat-in">
+    <div class="inner">
+      <div class="panel plain split reverse reveal">
+        <div class="carousel">
+          <div class="track">
+            <div class="slide"><img src="assets/img/terras.jpg" alt="Blauwe tafeltjes op de stoep voor Mitsos"></div>
+            <div class="slide"><div class="ph"><div><b>Pita gyros</b><small>Foto volgt</small></div></div></div>
+            <div class="slide"><div class="ph"><div><b>Souvlaki</b><small>Foto volgt</small></div></div></div>
+          </div>
+          <div class="car-ui">
+            <div class="dots"></div>
+            <div class="car-btns">
+              <button class="car-btn prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
         </div>
-        <div class="btns">
-          <a class="btn blue" href="#">Bestel om af te halen</a>
-          <a class="btn outline" href="#">Bekijk menu</a>
+        <div class="copy">
+          <span class="eyebrow">Eat in &amp; take away</span>
+          <h2>Even zitten, <em>of mee naar huis</em></h2>
+          <p class="lead">Neem plaats aan een van onze blauwe tafeltjes op de stoep, of laat je bord inpakken. Pita gyros en souvlaki maken we terwijl je wacht.</p>
+          <div class="btn-row">
+            <a class="btn primary" href="#">Bestel om af te halen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn soft" href="#">Menu</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CATERING -->
-  <section class="section accent" id="catering">
-    <div class="inner split">
-      <div class="carousel">
-        <div class="track">
-          <div class="slide"><div class="ph"><div><b>Meze buffet</b><small>Foto volgt</small></div></div></div>
-          <div class="slide"><div class="ph"><div><b>Borrelplank</b><small>Foto volgt</small></div></div></div>
-          <div class="slide"><div class="ph"><div><b>Walking dinner</b><small>Foto volgt</small></div></div></div>
+  <section class="block" id="catering">
+    <div class="inner">
+      <div class="panel sage split reveal">
+        <div class="copy">
+          <span class="eyebrow">Catering</span>
+          <h2>Een Grieks buffet <em>voor jouw gasten</em></h2>
+          <p class="lead">Op kantoor, op een verjaardag of op een bruiloft. We verzorgen catering voor kleine en grote gezelschappen in Amsterdam en omgeving.</p>
+          <ol class="steps">
+            <li><div><b>Vertel ons over je feest</b><span>Datum, aantal gasten en wensen.</span></div></li>
+            <li><div><b>We stellen het menu samen</b><span>Meze, ovenschotels, salades en zoet, op maat van je budget.</span></div></li>
+            <li><div><b>Wij koken, jij geniet</b><span>Ophalen bij de winkel of laten bezorgen.</span></div></li>
+          </ol>
+          <div class="btn-row">
+            <a class="btn primary" href="#">Offerte aanvragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn soft" href="#">Cateringmenu</a>
+          </div>
         </div>
-        <button class="car-btn prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button>
-        <div class="dots"></div>
+        <div class="carousel">
+          <div class="track">
+            <div class="slide"><div class="ph"><div><b>Meze buffet</b><small>Foto volgt</small></div></div></div>
+            <div class="slide"><div class="ph"><div><b>Borrelplank</b><small>Foto volgt</small></div></div></div>
+            <div class="slide"><div class="ph"><div><b>Walking dinner</b><small>Foto volgt</small></div></div></div>
+          </div>
+          <div class="car-ui">
+            <div class="dots"></div>
+            <div class="car-btns">
+              <button class="car-btn prev" aria-label="Vorige foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+              <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="copy">
-        <h2>Catering</h2>
-        <p class="lead">Een Grieks buffet op kantoor, een verjaardag of een bruiloft? Mitsos verzorgt catering voor kleine en grote gezelschappen in Amsterdam en omgeving.</p>
-        <p>Meze, warme ovenschotels, salades en zoet. We stellen het menu samen met jou, op maat van je gasten en je budget.</p>
-        <div class="info" id="contact">
-          <div>
-            <h3>E-mail</h3>
-            <p><span class="todo">info@mitsos.nl</span></p>
+    </div>
+  </section>
+
+  <!-- BEZOEK -->
+  <section class="block" id="bezoek">
+    <div class="inner">
+      <div class="panel plain split reveal">
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=Tweede+Hugo+de+Grootstraat+25H+Amsterdam" aria-label="Open de locatie in Google Maps">
+          <span class="pin"></span>
+          <span class="label">Open in Google Maps ↗</span>
+        </a>
+        <div class="copy">
+          <span class="eyebrow">Bezoek &amp; bestellen</span>
+          <h2>Kom langs <em>in West</em></h2>
+          <div class="info">
+            <div><h4>Adres</h4><p>Tweede Hugo de Grootstraat 25H<br>1052 LB Amsterdam</p></div>
+            <div><h4>Open</h4><p><span class="todo">ma–za 00:00–00:00</span><br><span class="todo">zo gesloten</span></p></div>
+            <div><h4>Telefoon</h4><p><span class="todo">020 000 00 00</span></p></div>
+            <div><h4>E-mail</h4><p><span class="todo">info@mitsos.nl</span></p></div>
           </div>
-          <div>
-            <h3>Telefoon</h3>
-            <p><span class="todo">020 000 00 00</span></p>
+          <div class="btn-row">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Tweede+Hugo+de+Grootstraat+25H+Amsterdam">Route plannen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
-        </div>
-        <div class="btns">
-          <a class="btn" href="#">Bekijk cateringmenu</a>
-          <a class="btn line" href="#">Offerte aanvragen</a>
         </div>
       </div>
     </div>
@@ -162,12 +213,12 @@
 
 <footer class="footer">
   <div class="inner">
-    <div class="cols">
+    <div class="top">
       <div>
-        <div class="brand">MITSOS</div>
-        <p style="margin:0 0 16px; max-width:36ch; opacity:.85">Griekse traiteur in Amsterdam sinds 1996. Take away, eat in en catering.</p>
+        <a class="brand" href="#top">MITSOS</a>
+        <p class="muted" style="margin-top:10px; max-width:34ch">Griekse traiteur in Amsterdam sinds 1996. Take away, eat in en catering.</p>
         <div class="social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
         </div>
       </div>
@@ -181,27 +232,23 @@
         </ul>
       </div>
       <div>
-        <h4>Bezoek ons</h4>
+        <h4>Bezoek</h4>
         <ul>
           <li>Tweede Hugo de Grootstraat 25H</li>
           <li>1052 LB Amsterdam</li>
-          <li><a href="https://www.google.com/maps/search/?api=1&query=Tweede+Hugo+de+Grootstraat+25H+Amsterdam">Route plannen</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Tweede+Hugo+de+Grootstraat+25H+Amsterdam">Route plannen ↗</a></li>
         </ul>
       </div>
     </div>
+    <div class="wordmark" aria-hidden="true">MITSOS</div>
     <div class="legal">
       <span>© 1996–<span id="year">2026</span> Mitsos Traiterie</span>
-      <span><a href="#">Privacy</a> · <a href="#">Algemene voorwaarden</a></span>
+      <span><a href="#">Privacy</a> · <a href="#">Voorwaarden</a></span>
     </div>
   </div>
 </footer>
 
-<div class="switcher" role="group" aria-label="Accentkleur kiezen">
-  <button data-accent="groen" aria-pressed="true"><i style="background:#93AB79"></i>Groen</button>
-  <button data-accent="terra" aria-pressed="false"><i style="background:#C8643C"></i>Terrakota</button>
-  <button data-accent="geel" aria-pressed="false"><i style="background:#E8B931"></i>Geel</button>
-</div>
-
+<script src="assets/vendor/lenis.min.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
