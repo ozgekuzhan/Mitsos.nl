@@ -31,21 +31,21 @@ document.querySelectorAll(".carousel").forEach((car) => {
   paint();
 });
 
-// Kleurwisselaar: terrakota of geel (alleen voor het ontwerp)
+// Kleurwisselaar: groen, terrakota of geel (alleen voor het ontwerp)
 const root = document.documentElement;
 const setAccent = (name) => {
-  if (name === "geel") root.dataset.accent = "geel";
-  else delete root.dataset.accent;
+  if (name === "terra") delete root.dataset.accent;
+  else root.dataset.accent = name;
   document.querySelectorAll(".switcher button").forEach((b) =>
-    b.setAttribute("aria-pressed", String(b.dataset.accent === (name || "terra")))
+    b.setAttribute("aria-pressed", String(b.dataset.accent === name))
   );
-  try { localStorage.setItem("mitsos-accent", name); } catch (e) {}
+  try { localStorage.setItem("mitsos-accent-v2", name); } catch (e) {}
 };
 document.querySelectorAll(".switcher button").forEach((b) =>
   b.addEventListener("click", () => setAccent(b.dataset.accent))
 );
-let saved = "terra";
-try { saved = localStorage.getItem("mitsos-accent") || "terra"; } catch (e) {}
+let saved = "groen";
+try { saved = localStorage.getItem("mitsos-accent-v2") || "groen"; } catch (e) {}
 setAccent(saved);
 
 document.getElementById("year").textContent = new Date().getFullYear();

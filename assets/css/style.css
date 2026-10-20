@@ -25,6 +25,13 @@
   --radius: 6px;
   color-scheme: light;
 }
+:root[data-accent="groen"] {
+  --acc: #93AB79;        /* saliegroen uit het voorbeeld */
+  --acc-deep: #7A9461;
+  --acc-soft: #E8EEDF;
+  --acc-text: #5E7A45;
+  --on-acc: #14285A;
+}
 :root[data-accent="geel"] {
   --acc: #E8B931;
   --acc-deep: #C99A17;
