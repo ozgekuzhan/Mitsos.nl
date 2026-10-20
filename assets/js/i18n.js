@@ -10,15 +10,9 @@ const EN = {
   "Hoofdmenu": "Main menu",
 
   // Hero
-  "Griekse traiteur · Amsterdam": "Greek deli · Amsterdam",
   "Huisgemaakt Grieks,": "Homemade Greek,",
   "elke dag vers.": "fresh every day.",
-  "Moussaka, spanakopita, meze en gyros. Sinds 1996 koken we in de Hugo de Grootstraat zoals we het thuis doen.":
-    "Moussaka, spanakopita, meze and gyros. Since 1996 we have been cooking on Hugo de Grootstraat the way we do at home.",
   "Bekijk de vitrine": "See what's in store",
-  "Sinds 1996": "Since 1996",
-  "Catering op maat": "Tailor-made catering",
-  "Vandaag in de vitrine": "In the display today",
 
   // Aanbod
   "Drie manieren om": "Three ways to",
@@ -70,9 +64,51 @@ const EN = {
   "Route plannen": "Get directions",
   "Route plannen ↗": "Get directions ↗",
 
+  // Navigatie en hero (nieuw)
+  "Over ons": "About us",
+  "Griekse traiteur in Amsterdam, sinds 1996.": "Greek deli in Amsterdam, since 1996.",
+
+  // Ons verhaal
+  "Ons verhaal": "Our story",
+  "Een familiezaak": "A family business",
+  "sinds 1996": "since 1996",
+  "In 1996 openden we onze deur in de Tweede Hugo de Grootstraat. Sindsdien koken we elke dag zoals thuis in Griekenland: met verse groenten, goede olijfolie en recepten uit de familie.":
+    "We opened our doors on Tweede Hugo de Grootstraat in 1996. Ever since, we have cooked every day the way we do at home in Greece: with fresh vegetables, good olive oil and family recipes.",
+  "Geopend in West": "Opened in West",
+  "Elke dag": "Every day",
+  "Vers gekookt": "Freshly cooked",
+  "Huisgemaakt": "Homemade",
+  "Familie Mitsos": "The Mitsos family",
+
+  // Offerteformulier
+  "Catering aanvragen": "Request catering",
+  "Vertel ons": "Tell us",
+  "over je feest": "about your event",
+  "Vul het formulier in en we sturen je een voorstel op maat.": "Fill in the form and we will send you a tailored proposal.",
+  "Naam": "Name",
+  "Datum": "Date",
+  "Aantal gasten": "Number of guests",
+  "Gelegenheid": "Occasion",
+  "Zakelijk": "Business",
+  "Verjaardag": "Birthday",
+  "Bruiloft": "Wedding",
+  "Anders": "Other",
+  "Ophalen of bezorgen": "Pick-up or delivery",
+  "Ophalen": "Pick-up",
+  "Bezorgen": "Delivery",
+  "Wensen": "Wishes",
+  "Bijvoorbeeld: vegetarisch, allergieën, budget": "For example: vegetarian, allergies, budget",
+  "Aanvraag versturen": "Send request",
+
+  // Reviews
+  "Wat onze gasten": "What our guests",
+  "zeggen": "say",
+  "op Google": "on Google",
+  "Hier komt een echte review van Google.": "A real Google review goes here.",
+  "Lees alle reviews op Google": "Read all reviews on Google",
+
   // Footer
   "Griekse traiteur in Amsterdam sinds 1996. Take away, eat in en catering.": "Greek deli in Amsterdam since 1996. Take away, eat in and catering.",
-  "Ons verhaal": "Our story",
   "Voorwaarden": "Terms",
 
   // Foto's
@@ -94,7 +130,7 @@ const EN = {
   "Mitsos, Griekse traiteur in Amsterdam sinds 1996. Take away, eat in en catering.": "Mitsos, Greek deli in Amsterdam since 1996. Take away, eat in and catering."
 };
 
-const ATTRS = ["alt", "aria-label"];
+const ATTRS = ["alt", "aria-label", "placeholder"];
 const textNodes = [];
 const attrNodes = [];
 const meta = document.querySelector('meta[name="description"]');
@@ -122,6 +158,7 @@ function setLang(lang) {
   attrNodes.forEach((t) => t.el.setAttribute(t.a, en ? t.en : t.nl));
   meta.content = en ? EN[metaNl] : metaNl;
   document.documentElement.lang = lang;
+  document.querySelectorAll(".form-msg").forEach((m) => { m.hidden = true; });
   langBtn.textContent = en ? "NL" : "EN";
   langBtn.setAttribute("aria-label", en ? "Bekijk de site in het Nederlands" : "View the site in English");
   langBtn.lang = en ? "nl" : "en";

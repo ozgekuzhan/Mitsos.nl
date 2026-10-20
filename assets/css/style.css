@@ -1,6 +1,7 @@
 /* Mitsos Traiterie
    Layout: zachte, minimale onepager. Zwevende glazen navigatie, hero met afgeronde foto,
-   drie kaarten, daarna secties als zachte saliegroene panelen met veel witruimte. */
+   drie kaarten, daarna secties als zachte saliegroene panelen met veel witruimte.
+   Mitsos-blauw is de accentkleur: knoppen, cursieve woorden, labels en het reviewpaneel. */
 :root {
   --bg: #F8F7F2;
   --surface: #FFFFFF;
@@ -9,6 +10,7 @@
   --sage-deep: #56703F;
   --blue: #1E4FC2;
   --blue-soft: #E7EDFA;
+  --blue-deep: #163C96;
   --ink: #1B2742;
   --ink-soft: #5D6679;
   --line: rgba(27, 39, 66, .08);
@@ -41,7 +43,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-::selection { background: var(--sage-soft); }
+::selection { background: var(--blue-soft); }
 section[id] { scroll-margin-top: 96px; }
 
 .inner {
@@ -52,13 +54,13 @@ section[id] { scroll-margin-top: 96px; }
 }
 .eyebrow {
   font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--sage-deep);
+  color: var(--blue);
 }
 h1, h2, h3 { font-family: var(--f-display); font-weight: 400; letter-spacing: -.01em; text-wrap: balance; margin: 0; }
 h1 { font-size: clamp(48px, 7.4vw, 92px); line-height: .98; }
 h2 { font-size: clamp(38px, 5.2vw, 64px); line-height: 1.02; }
 h3 { font-size: 28px; line-height: 1.1; }
-h1 em, h2 em { font-style: italic; color: var(--sage-deep); }
+h1 em, h2 em { font-style: italic; color: var(--blue); }
 p { margin: 0; }
 .muted { color: var(--ink-soft); }
 .lead { font-size: clamp(17px, 1.6vw, 19px); color: var(--ink-soft); max-width: 46ch; }
@@ -74,8 +76,10 @@ p { margin: 0; }
 .btn svg { width: 16px; height: 16px; transition: transform .4s var(--ease); }
 .btn:hover svg { transform: translateX(3px); }
 .btn:active { transform: scale(.97); }
-.btn.primary { background: var(--ink); color: var(--surface); }
-.btn.primary:hover { background: var(--blue); }
+.btn.primary { background: var(--blue); color: var(--surface); }
+.btn.primary:hover { background: var(--blue-deep); box-shadow: 0 10px 24px -12px rgba(30, 79, 194, .6); }
+.btn.light { background: var(--surface); color: var(--blue); }
+.btn.light:hover { background: var(--blue-soft); }
 .btn.soft { background: var(--surface); color: var(--ink); border-color: var(--line); }
 .btn.soft:hover { box-shadow: var(--shadow); }
 .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
@@ -101,7 +105,7 @@ p { margin: 0; }
   box-shadow: 0 8px 30px -12px rgba(27, 39, 66, .22);
 }
 .brand { font-family: var(--f-logo); font-size: 20px; letter-spacing: .18em; color: var(--blue); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-.brand svg { width: 18px; height: 18px; color: var(--sage-deep); }
+.brand svg { width: 18px; height: 18px; color: var(--sage); }
 .nav-links { display: none; gap: 4px; }
 .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; padding: 9px 14px; border-radius: 999px; color: var(--ink-soft); transition: background .3s, color .3s; }
 .nav-links a:hover { background: rgba(27, 39, 66, .05); color: var(--ink); }
@@ -131,25 +135,11 @@ p { margin: 0; }
 .hero { padding-block: 112px 40px; }
 .hero .inner { display: grid; gap: 36px; align-items: center; }
 @media (min-width: 900px) { .hero .inner { grid-template-columns: 1fr 1.05fr; gap: 56px; } .hero { padding-block: 136px 64px; } }
-.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.hero-copy { display: grid; gap: 26px; min-width: 0; }
 .hero-media { position: relative; }
 .hero-media .frame { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%; box-shadow: var(--shadow); }
 @media (min-width: 900px) { .hero-media .frame { aspect-ratio: 5 / 6; } }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
-.float-card {
-  position: absolute; left: -12px; bottom: 24px; max-width: 260px;
-  padding: 16px 18px; border-radius: var(--r-md);
-  background: var(--glass); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, .75); box-shadow: var(--shadow);
-  display: grid; gap: 6px; font-size: 14px;
-}
-@media (max-width: 899px) { .float-card { left: 14px; right: 14px; max-width: none; } }
-.float-card .eyebrow { font-size: 11px; }
-.live { display: inline-flex; align-items: center; gap: 8px; }
-.live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 4px var(--sage-soft); }
-.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink-soft); }
-.facts span { display: inline-flex; align-items: center; }
-.facts span + span::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--sage); margin-right: 18px; }
 
 /* ---------- Kaarten ---------- */
 .offer { padding-block: 40px 24px; }
@@ -167,8 +157,8 @@ p { margin: 0; }
 .card:hover .pic img { transform: scale(1.04); }
 .card .txt { padding: 0 10px; display: flex; justify-content: space-between; align-items: end; gap: 12px; }
 .card .txt p { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
-.card .arrow { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--sage-soft); color: var(--sage-deep); transition: background .3s, color .3s; }
-.card:hover .arrow { background: var(--ink); color: var(--surface); }
+.card .arrow { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--blue-soft); color: var(--blue); transition: background .3s, color .3s; }
+.card:hover .arrow { background: var(--blue); color: var(--surface); }
 .card .arrow svg { width: 16px; height: 16px; }
 
 /* Foto volgt: zachte plek voor gerechtfoto's */
@@ -207,7 +197,7 @@ p { margin: 0; }
 /* Stappen catering: echte volgorde */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: s; }
 .steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; background: var(--surface); border-radius: var(--r-sm); padding: 14px 16px; }
-.steps li::before { content: counter(s); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--sage); color: var(--surface); font-weight: 700; font-size: 14px; }
+.steps li::before { content: counter(s); width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: var(--surface); font-weight: 700; font-size: 14px; }
 .steps b { display: block; }
 .steps span { font-size: 14px; color: var(--ink-soft); }
 
@@ -224,11 +214,65 @@ p { margin: 0; }
 .car-ui { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .dots { display: flex; gap: 6px; }
 .dots span { height: 6px; width: 6px; border-radius: 99px; background: var(--ink); opacity: .2; transition: width .4s var(--ease), opacity .3s; }
-.dots span.on { width: 22px; opacity: .8; }
+.dots span.on { width: 22px; opacity: 1; background: var(--blue); }
 .car-btns { display: flex; gap: 8px; }
 .car-btn { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; transition: background .3s, color .3s; }
-.car-btn:hover { background: var(--ink); color: var(--surface); }
+.car-btn:hover { background: var(--blue); border-color: var(--blue); color: var(--surface); }
 .car-btn svg { width: 16px; height: 16px; }
+
+
+/* ---------- Ons verhaal ---------- */
+.story-pic { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%; }
+@media (min-width: 900px) { .story-pic { aspect-ratio: 1; } }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stats div { background: var(--sage-soft); border-radius: var(--r-sm); padding: 16px; display: grid; gap: 2px; }
+.stats b { font-family: var(--f-display); font-weight: 400; font-size: clamp(24px, 3vw, 32px); line-height: 1.1; color: var(--blue); }
+.stats span { font-size: 13px; color: var(--ink-soft); }
+
+/* ---------- Offerteformulier ---------- */
+@media (min-width: 900px) { .form-split { grid-template-columns: .8fr 1.2fr; align-items: start; } }
+.form { display: grid; grid-template-columns: 1fr; gap: 14px; min-width: 0; }
+@media (min-width: 560px) { .form { grid-template-columns: 1fr 1fr; } }
+.form .wide { grid-column: 1 / -1; }
+.field { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.field label, .field legend { font-size: 13px; font-weight: 600; padding: 0; margin-bottom: 6px; }
+.field > label { margin-bottom: 0; }
+.field input, .field select, .field textarea {
+  width: 100%; font: 500 16px/1.4 var(--f-body); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm);
+  padding: 13px 14px; transition: border-color .2s, box-shadow .2s;
+  -webkit-appearance: none; appearance: none;
+}
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E4FC2' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 16px; padding-right: 40px;
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px var(--blue-soft); }
+.field .invalid { border-color: #C2412D; }
+.toggle { display: flex; gap: 8px; flex-wrap: wrap; }
+.toggle label { margin: 0; cursor: pointer; }
+.toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.toggle span { display: inline-block; padding: 11px 18px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 15px; font-weight: 500; transition: background .2s, color .2s; }
+.toggle input:checked + span { background: var(--blue); border-color: var(--blue); color: var(--surface); }
+.toggle input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: 3px; }
+.form-end { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 4px; }
+.form-msg { font-size: 14px; color: var(--ink-soft); }
+
+/* ---------- Reviews: het blauwe paneel ---------- */
+.panel.blue { background: var(--blue); color: var(--surface); display: grid; gap: 32px; }
+.panel.blue .eyebrow { color: rgba(255, 255, 255, .72); }
+.panel.blue h2 em { color: #BFD0F5; }
+.reviews-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px; }
+.rating { display: grid; justify-items: start; gap: 2px; font-size: 14px; color: rgba(255, 255, 255, .8); }
+.rating b { font-family: var(--f-display); font-weight: 400; font-size: 56px; line-height: 1; color: var(--surface); }
+.stars { color: #FFD66B; letter-spacing: .14em; font-size: 16px; }
+.reviews { display: grid; gap: 14px; }
+@media (min-width: 760px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
+.review { margin: 0; padding: 24px; border-radius: var(--r-md); background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .16); display: grid; gap: 16px; align-content: space-between; }
+.review blockquote { margin: 0; font-family: var(--f-display); font-size: 24px; line-height: 1.25; }
+.review blockquote::before { content: "“"; display: block; font-size: 56px; line-height: .6; color: #BFD0F5; margin-bottom: 8px; }
+.review figcaption { font-size: 14px; color: rgba(255, 255, 255, .8); justify-self: start; }
 
 /* ---------- Bezoek ---------- */
 .map {
@@ -253,7 +297,7 @@ p { margin: 0; }
 .footer h4 { margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
 .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .footer a { text-decoration: none; }
-.footer a:hover { color: var(--sage-deep); }
+.footer a:hover { color: var(--blue); }
 .social { display: flex; gap: 8px; margin-top: 16px; }
 .social a { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--surface); border: 1px solid var(--line); }
 .social svg { width: 18px; height: 18px; }

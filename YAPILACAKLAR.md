@@ -13,7 +13,8 @@
 - Tasarım yumuşak ve minimal: kırık beyaz zemin `#F8F7F2`, adaçayı yeşili `#93AB79` (açık tonu `#EDF1E6`, koyu tonu `#56703F`), Mitsos mavisi `#1E4FC2` (logoda), lacivert metin `#1B2742`.
 - Yazı tipleri: Instrument Serif (başlıklar), Manrope (gövde), Marcellus (MITSOS logosu).
 - Cam efektli yüzen menü, CSS scroll-driven animasyonlar, yuvarlak paneller.
-- Bölümler: Hero, "Drie manieren" kartları, Traiteur, Eat in & take away, Catering (3 adım), Bezoek & bestellen, alt bilgi.
+- Bölümler: Hero (sade: başlık, tek cümle, iki düğme), "Drie manieren" kartları, Traiteur, Eat in & take away, Ons verhaal, Catering (3 adım), Offerteformulier, Google reviews (mavi panel), Bezoek & bestellen, alt bilgi.
+- Mitsos mavisi vurgu rengi: düğmeler, italik başlık kelimeleri, etiketler, reviews paneli. Zemin yeşil kalıyor.
 - Önizleme (claude.ai artifact): https://claude.ai/artifact/8gRJQcXrZG6qnto6VD96PB
 
 ## Yapılacaklar
@@ -29,7 +30,10 @@
 4. [ ] Yer tutucu bilgileri gerçekleriyle değiştir (kullanıcıdan iste): açılış saatleri, telefon, e-posta (`info@mitsos.nl` tahmin), Instagram ve Facebook linkleri, menü ve sipariş linkleri. Bunlar sitede `.todo` sınıfıyla işaretli.
 5. [ ] Adresi kullanıcıya teyit ettir.
 6. [ ] Değişiklikten sonra: Playwright ile mobil (390 px) ve masaüstü (1280 px) ekran görüntüsü al, artifact'i güncelle, commit edip `claude/eerste-ontwerp` dalına push et.
-7. [ ] Kullanıcı istemeden PR açma. İleride: `main` dalı ve yayın (hosting) seçimi.
+7. [ ] **Google reviews:** Kullanıcıdan 3 gerçek Google yorumu (metin + isim) ve ortalama puanı iste. Uydurma yorum yazma. Şu an `.todo` yer tutucuları var.
+8. [ ] **Ons verhaal:** Metin genel tutuldu ("familiezaak sinds 1996"). Kullanıcıya hikâyeyi teyit ettir (kim kurdu, aile kaç kuşak, vb.) ve bir aile/dükkân fotoğrafı iste.
+9. [ ] **Cateringformulier:** Şimdilik ziyaretçinin e-posta uygulamasını açıyor (`mailto`, adres `assets/js/main.js` içinde `OFFERTE_EMAIL`). Yayın (hosting) seçilince gerçek bir form servisine bağla (Netlify Forms, Formspree vb.).
+10. [ ] Kullanıcı istemeden PR açma. İleride: `main` dalı ve yayın (hosting) seçimi.
 
 ## İngilizce
 - NL/EN düğmesi menüde. Çeviriler `assets/js/i18n.js` dosyasında (Felemenkçe metin → İngilizce). HTML'de bir metin değişirse buradaki anahtarı da güncelle.

@@ -41,4 +41,35 @@ document.querySelectorAll(".carousel").forEach((car) => {
   paint();
 });
 
+// Offerteformulier: zolang er geen server is, opent het de e-mail van de bezoeker met alles ingevuld
+const OFFERTE_EMAIL = "info@mitsos.nl"; // TODO: echt adres van Mitsos
+const form = document.getElementById("offerte-form");
+const formMsg = form.querySelector(".form-msg");
+const formText = {
+  nl: { missing: "Vul de gemarkeerde velden in.", sent: "Je e-mailprogramma opent met je aanvraag. Verstuur die e-mail om de aanvraag af te ronden.", subject: "Cateringaanvraag" },
+  en: { missing: "Please fill in the highlighted fields.", sent: "Your email app opens with your request. Send that email to complete the request.", subject: "Catering request" },
+};
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const t = formText[document.documentElement.lang] || formText.nl;
+  const fields = [...form.querySelectorAll("input, select, textarea")];
+  fields.forEach((f) => f.classList.toggle("invalid", !f.checkValidity()));
+  formMsg.hidden = false;
+  if (!form.checkValidity()) {
+    formMsg.textContent = t.missing;
+    form.querySelector(".invalid").focus();
+    return;
+  }
+  const data = new FormData(form);
+  const lines = [...form.querySelectorAll(".field")].map((field) => {
+    const label = field.querySelector("label, legend").textContent.trim();
+    const input = field.querySelector("input:checked, input:not([type=radio]), select, textarea");
+    return `${label}: ${data.get(input.name) || "-"}`;
+  });
+  const subject = `${t.subject} ${data.get("datum")} (${data.get("gasten")})`;
+  location.href = `mailto:${OFFERTE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+  formMsg.textContent = t.sent;
+});
+form.addEventListener("input", (e) => e.target.classList.remove("invalid"));
+
 document.getElementById("year").textContent = new Date().getFullYear();

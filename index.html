@@ -24,6 +24,7 @@
       <a href="#traiteur">Traiteur</a>
       <a href="#eat-in">Eat in</a>
       <a href="#catering">Catering</a>
+      <a href="#verhaal">Over ons</a>
       <a href="#bezoek">Bezoek</a>
     </nav>
     <a class="btn primary order" href="#bezoek">Bestellen</a>
@@ -36,6 +37,7 @@
     <a href="#traiteur">Traiteur</a>
     <a href="#eat-in">Eat in &amp; take away</a>
     <a href="#catering">Catering</a>
+    <a href="#verhaal">Over ons</a>
     <a href="#bezoek">Bezoek &amp; bestellen</a>
   </div>
 </div>
@@ -45,21 +47,15 @@
   <section class="hero">
     <div class="inner">
       <div class="hero-copy">
-        <span class="eyebrow">Griekse traiteur · Amsterdam</span>
         <h1>Huisgemaakt Grieks, <em>elke dag vers.</em></h1>
-        <p class="lead">Moussaka, spanakopita, meze en gyros. Sinds 1996 koken we in de Hugo de Grootstraat zoals we het thuis doen.</p>
+        <p class="lead">Griekse traiteur in Amsterdam, sinds 1996.</p>
         <div class="btn-row">
           <a class="btn primary" href="#traiteur">Bekijk de vitrine <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn soft" href="#catering">Catering</a>
         </div>
-        <div class="facts"><span>Sinds 1996</span><span>Take away &amp; eat in</span><span>Catering op maat</span></div>
       </div>
       <div class="hero-media">
         <div class="frame"><img src="assets/img/meze-aan-tafel.jpg" alt="Griekse meze op een gedekte tafel" loading="eager" decoding="async"></div>
-        <div class="float-card">
-          <span class="eyebrow live">Vandaag in de vitrine</span>
-          <span>Moussaka · Spanakopita · Dolmades · Tzatziki</span>
-        </div>
       </div>
     </div>
   </section>
@@ -150,6 +146,25 @@
     </div>
   </section>
 
+  <!-- ONS VERHAAL -->
+  <section class="block" id="verhaal">
+    <div class="inner">
+      <div class="panel plain split reveal">
+        <div class="story-pic"><div class="ph"><div><b>Familie Mitsos</b><small>Foto volgt</small></div></div></div>
+        <div class="copy">
+          <span class="eyebrow">Ons verhaal</span>
+          <h2>Een familiezaak <em>sinds 1996</em></h2>
+          <p class="lead">In 1996 openden we onze deur in de Tweede Hugo de Grootstraat. Sindsdien koken we elke dag zoals thuis in Griekenland: met verse groenten, goede olijfolie en recepten uit de familie.</p>
+          <div class="stats">
+            <div><b>1996</b><span>Geopend in West</span></div>
+            <div><b>Elke dag</b><span>Vers gekookt</span></div>
+            <div><b>100%</b><span>Huisgemaakt</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CATERING -->
   <section class="block" id="catering">
     <div class="inner">
@@ -164,7 +179,7 @@
             <li><div><b>Wij koken, jij geniet</b><span>Ophalen bij de winkel of laten bezorgen.</span></div></li>
           </ol>
           <div class="btn-row">
-            <a class="btn primary" href="#">Offerte aanvragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn primary" href="#offerte">Offerte aanvragen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             <a class="btn soft" href="#">Cateringmenu</a>
           </div>
         </div>
@@ -181,6 +196,69 @@
               <button class="car-btn next" aria-label="Volgende foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERTE -->
+  <section class="block" id="offerte">
+    <div class="inner">
+      <div class="panel sage split form-split reveal">
+        <div class="copy">
+          <span class="eyebrow">Catering aanvragen</span>
+          <h2>Vertel ons <em>over je feest</em></h2>
+          <p class="lead">Vul het formulier in en we sturen je een voorstel op maat.</p>
+        </div>
+        <form class="form" id="offerte-form" novalidate>
+          <div class="field"><label for="f-naam">Naam</label><input id="f-naam" name="naam" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-tel">Telefoon</label><input id="f-tel" name="telefoon" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-datum">Datum</label><input id="f-datum" name="datum" type="date" required></div>
+          <div class="field"><label for="f-gasten">Aantal gasten</label><input id="f-gasten" name="gasten" type="number" min="1" inputmode="numeric" required></div>
+          <div class="field"><label for="f-soort">Gelegenheid</label>
+            <select id="f-soort" name="gelegenheid">
+              <option>Zakelijk</option>
+              <option>Verjaardag</option>
+              <option>Bruiloft</option>
+              <option>Anders</option>
+            </select>
+          </div>
+          <fieldset class="field wide">
+            <legend>Ophalen of bezorgen</legend>
+            <div class="toggle">
+              <label><input type="radio" name="levering" value="Ophalen" checked><span>Ophalen</span></label>
+              <label><input type="radio" name="levering" value="Bezorgen"><span>Bezorgen</span></label>
+            </div>
+          </fieldset>
+          <div class="field wide"><label for="f-wensen">Wensen</label><textarea id="f-wensen" name="wensen" rows="4" placeholder="Bijvoorbeeld: vegetarisch, allergieën, budget"></textarea></div>
+          <div class="wide form-end">
+            <button class="btn primary" type="submit">Aanvraag versturen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <p class="form-msg" role="status" hidden></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="block" id="reviews">
+    <div class="inner">
+      <div class="panel blue reveal">
+        <div class="reviews-head">
+          <div class="copy">
+            <span class="eyebrow">Google reviews</span>
+            <h2>Wat onze gasten <em>zeggen</em></h2>
+          </div>
+          <div class="rating"><b class="todo">–,–</b><span class="stars" aria-hidden="true">★★★★★</span><span>op Google</span></div>
+        </div>
+        <div class="reviews">
+          <figure class="review"><blockquote class="todo">Hier komt een echte review van Google.</blockquote><figcaption class="todo">Naam</figcaption></figure>
+          <figure class="review"><blockquote class="todo">Hier komt een echte review van Google.</blockquote><figcaption class="todo">Naam</figcaption></figure>
+          <figure class="review"><blockquote class="todo">Hier komt een echte review van Google.</blockquote><figcaption class="todo">Naam</figcaption></figure>
+        </div>
+        <div class="btn-row">
+          <a class="btn light" href="https://www.google.com/maps/search/?api=1&query=Mitsos+Tweede+Hugo+de+Grootstraat+25H+Amsterdam">Lees alle reviews op Google <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
@@ -229,7 +307,7 @@
           <li><a href="#traiteur">Traiteur</a></li>
           <li><a href="#eat-in">Eat in &amp; take away</a></li>
           <li><a href="#catering">Catering</a></li>
-          <li><a href="#">Ons verhaal</a></li>
+          <li><a href="#verhaal">Ons verhaal</a></li>
         </ul>
       </div>
       <div>
