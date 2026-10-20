@@ -31,6 +31,10 @@
 6. [ ] Değişiklikten sonra: Playwright ile mobil (390 px) ve masaüstü (1280 px) ekran görüntüsü al, artifact'i güncelle, commit edip `claude/eerste-ontwerp` dalına push et.
 7. [ ] Kullanıcı istemeden PR açma. İleride: `main` dalı ve yayın (hosting) seçimi.
 
+## İngilizce
+- NL/EN düğmesi menüde. Çeviriler `assets/js/i18n.js` dosyasında (Felemenkçe metin → İngilizce). HTML'de bir metin değişirse buradaki anahtarı da güncelle.
+- Dil sırası: `?lang=en` linki, ziyaretçinin önceki seçimi, tarayıcı dili (Felemenkçe değilse İngilizce).
+
 ## Notlar
 - Bu oturumda "browser isn't supported" uyarısı çıktı. Büyük ihtimalle uygulama içi tarayıcıdan kaynaklanıyordu. Çözüm olarak tek dosyalık bir HTML (görseller içine gömülü) gönderildi.
 - Kullanıcı tasarımda **yumuşak, minimal ve modern** bir görünüm istiyor.

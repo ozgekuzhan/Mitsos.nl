@@ -106,6 +106,8 @@ p { margin: 0; }
 .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; padding: 9px 14px; border-radius: 999px; color: var(--ink-soft); transition: background .3s, color .3s; }
 .nav-links a:hover { background: rgba(27, 39, 66, .05); color: var(--ink); }
 .nav .btn { padding: 11px 18px; font-size: 14px; }
+.lang { margin-left: auto; height: 42px; min-width: 42px; padding: 0 12px; border-radius: 999px; border: 0; background: rgba(27, 39, 66, .06); color: var(--ink); font: 700 12px/1 var(--f-body); letter-spacing: .12em; cursor: pointer; transition: background .3s; }
+.lang:hover { background: rgba(27, 39, 66, .1); }
 .menu-btn { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 0; background: rgba(27, 39, 66, .06); color: var(--ink); cursor: pointer; }
 .menu-btn svg { width: 20px; height: 20px; }
 .nav .order { display: none; }
@@ -120,6 +122,9 @@ p { margin: 0; }
 @media (min-width: 820px) {
   .nav-links, .nav .order { display: flex; }
   .menu-btn, .sheet { display: none !important; }
+  .nav { justify-content: flex-start; }
+  .nav-links { margin-inline: auto; }
+  .lang { margin-left: 0; }
 }
 
 /* ---------- Hero ---------- */
