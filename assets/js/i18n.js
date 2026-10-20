@@ -59,7 +59,9 @@ const EN = {
   "Adres": "Address",
   "Open": "Opening hours",
   "Telefoon": "Phone",
-  "ma–za 00:00–00:00": "Mon–Sat 00:00–00:00",
+  "ma–za 12:00–20:00": "Mon–Sat 12:00–20:00",
+  "ma–za 12:00–20:00, zo gesloten": "Mon–Sat 12:00–20:00, Sun closed",
+  "Kaart: Mitsos, Tweede Hugo de Grootstraat 25, Amsterdam": "Map: Mitsos, Tweede Hugo de Grootstraat 25, Amsterdam",
   "zo gesloten": "Sun closed",
   "Route plannen": "Get directions",
   "Route plannen ↗": "Get directions ↗",
@@ -130,7 +132,7 @@ const EN = {
   "Mitsos, Griekse traiteur in Amsterdam sinds 1996. Take away, eat in en catering.": "Mitsos, Greek deli in Amsterdam since 1996. Take away, eat in and catering."
 };
 
-const ATTRS = ["alt", "aria-label", "placeholder"];
+const ATTRS = ["alt", "aria-label", "placeholder", "title"];
 const textNodes = [];
 const attrNodes = [];
 const meta = document.querySelector('meta[name="description"]');

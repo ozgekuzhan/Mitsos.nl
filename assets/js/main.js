@@ -42,7 +42,7 @@ document.querySelectorAll(".carousel").forEach((car) => {
 });
 
 // Offerteformulier: zolang er geen server is, opent het de e-mail van de bezoeker met alles ingevuld
-const OFFERTE_EMAIL = "info@mitsos.nl"; // TODO: echt adres van Mitsos
+const OFFERTE_EMAIL = "info@mitsos.nl";
 const form = document.getElementById("offerte-form");
 const formMsg = form.querySelector(".form-msg");
 const formText = {

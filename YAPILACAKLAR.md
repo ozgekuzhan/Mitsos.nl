@@ -4,7 +4,7 @@
 
 ## Proje özeti
 - Müşteri: **Mitsos Traiterie**, Amsterdam'da Yunan traiteur (1996'dan beri). Take away, eat in, catering.
-- Adres (web aramasından, müşteriye teyit ettirilecek): Tweede Hugo de Grootstraat 25H, 1052 LB Amsterdam.
+- Adres: Tweede Hugo de Grootstraat 25, 1052 LB Amsterdam. Tel 020 684 2344, info@mitsos.nl. Açık: pzt–cmt 12:00–20:00, pazar kapalı (kullanıcı teyit etti). Instagram @mitsostraiterie, Facebook traiteriemitsos.
 - Kullanıcı Amsterdam'da yaşıyor ve Türkçe konuşuyor. Site metinleri **Felemenkçe**.
 - Örnek alınan site: Evi Evane (Paris'te Yunan traiteur). Yapısı: hero, 3 kutu (Restaurant / Traiteurs / Catering), sonra bölümler ve alt bilgi.
 
@@ -27,8 +27,8 @@
    - Catering kaydırıcısı: Meze buffet, Borrelplank, Walking dinner
    Fotoğrafları `assets/img/` altına indir, yaklaşık 1200 px genişliğe küçült, `.ph` yer tutucularının yerine `<img>` koy. Kaynak ve fotoğrafçıyı `assets/img/KAYNAKLAR.md` dosyasına yaz.
 3. [x] **Kullanıcının vitrin fotoğrafını kullanma.** Kullanıcı bunu açıkça istemedi, eski kırpılmış görseller silindi.
-4. [ ] Yer tutucu bilgileri gerçekleriyle değiştir (kullanıcıdan iste): açılış saatleri, telefon, e-posta (`info@mitsos.nl` tahmin), Instagram ve Facebook linkleri, menü ve sipariş linkleri. Bunlar sitede `.todo` sınıfıyla işaretli.
-5. [ ] Adresi kullanıcıya teyit ettir.
+4. [~] (Saat, telefon, e-posta, Instagram, Facebook, Uber Eats yapıldı; menü linkleri hâlâ `#`.) Yer tutucu bilgileri gerçekleriyle değiştir (kullanıcıdan iste): açılış saatleri, telefon, e-posta (`info@mitsos.nl` tahmin), Instagram ve Facebook linkleri, menü ve sipariş linkleri. Bunlar sitede `.todo` sınıfıyla işaretli.
+5. [x] Adres düzeltildi (25H değil, 25). Google Maps haritası iframe olarak gömüldü, schema.org Restaurant verisi eklendi.
 6. [ ] Değişiklikten sonra: Playwright ile mobil (390 px) ve masaüstü (1280 px) ekran görüntüsü al, artifact'i güncelle, commit edip `claude/eerste-ontwerp` dalına push et.
 7. [ ] **Google reviews:** Kullanıcıdan 3 gerçek Google yorumu (metin + isim) ve ortalama puanı iste. Uydurma yorum yazma. Şu an `.todo` yer tutucuları var.
 8. [ ] **Ons verhaal:** Metin genel tutuldu ("familiezaak sinds 1996"). Kullanıcıya hikâyeyi teyit ettir (kim kurdu, aile kaç kuşak, vb.) ve bir aile/dükkân fotoğrafı iste.
