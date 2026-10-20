@@ -251,8 +251,8 @@ p { margin: 0; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px var(--blue-soft); }
 .field .invalid { border-color: #C2412D; }
 .toggle { display: flex; gap: 8px; flex-wrap: wrap; }
-.toggle label { margin: 0; cursor: pointer; }
-.toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.toggle label { position: relative; margin: 0; cursor: pointer; }
+.toggle input { position: absolute; inset: 0; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; opacity: 0; pointer-events: none; }
 .toggle span { display: inline-block; padding: 11px 18px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 15px; font-weight: 500; transition: background .2s, color .2s; }
 .toggle input:checked + span { background: var(--blue); border-color: var(--blue); color: var(--surface); }
 .toggle input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: 3px; }
@@ -286,17 +286,17 @@ p { margin: 0; }
 
 /* ---------- Snel contact, rechtsonder ---------- */
 .quick {
-  position: fixed; z-index: 40; display: grid; gap: 10px;
-  right: max(16px, env(safe-area-inset-right, 0px));
-  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  position: fixed; z-index: 40; display: grid; gap: 8px;
+  right: max(14px, env(safe-area-inset-right, 0px));
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
 }
 .quick-btn {
-  position: relative; width: 52px; height: 52px; border-radius: 50%;
+  position: relative; width: 42px; height: 42px; border-radius: 50%;
   display: grid; place-items: center; color: #fff; text-decoration: none;
   box-shadow: 0 10px 24px -10px rgba(27, 39, 66, .45);
   transition: transform .3s var(--ease), box-shadow .3s;
 }
-.quick-btn svg { width: 24px; height: 24px; }
+.quick-btn svg { width: 20px; height: 20px; }
 .quick-btn:hover, .quick-btn:focus-visible { transform: scale(1.08); box-shadow: 0 14px 30px -10px rgba(27, 39, 66, .5); }
 .quick-btn.wa { background: #25D366; }
 .quick-btn.tel { background: var(--blue); }
@@ -311,10 +311,10 @@ p { margin: 0; }
 @media (hover: hover) {
   .quick-btn:hover .tip, .quick-btn:focus-visible .tip { opacity: 1; }
 }
-@media (max-width: 480px) {
-  .quick { gap: 8px; }
-  .quick-btn { width: 46px; height: 46px; }
-  .quick-btn svg { width: 22px; height: 22px; }
+@media (min-width: 760px) {
+  .quick { gap: 10px; right: max(20px, env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .quick-btn { width: 52px; height: 52px; }
+  .quick-btn svg { width: 24px; height: 24px; }
 }
 @media print { .quick { display: none; } }
 
