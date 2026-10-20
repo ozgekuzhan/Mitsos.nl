@@ -64,6 +64,10 @@ const EN = {
   "Kaart: Mitsos, Tweede Hugo de Grootstraat 25, Amsterdam": "Map: Mitsos, Tweede Hugo de Grootstraat 25, Amsterdam",
   "zo gesloten": "Sun closed",
   "Route plannen": "Get directions",
+  "Snel contact": "Quick contact",
+  "Stuur ons een WhatsApp": "Send us a WhatsApp",
+  "Bel ons: 020 684 2344": "Call us: 020 684 2344",
+  "Volg ons op Instagram": "Follow us on Instagram",
   "Route plannen ↗": "Get directions ↗",
 
   // Navigatie en hero (nieuw)
