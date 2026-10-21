@@ -35,10 +35,28 @@ document.querySelectorAll(".carousel").forEach((car) => {
     const next = (current() + dir + slides.length) % slides.length;
     track.scrollTo({ left: next * step(), behavior: reduceMotion ? "auto" : "smooth" });
   };
-  car.querySelector(".prev").addEventListener("click", () => go(-1));
-  car.querySelector(".next").addEventListener("click", () => go(1));
   track.addEventListener("scroll", paint, { passive: true });
   paint();
+
+  // Automatisch doorschuiven: alleen in beeld, pauze bij aanraken of muis erop
+  const DELAY = 4000;
+  let timer = null, inView = false, paused = false;
+  const stop = () => { clearInterval(timer); timer = null; };
+  const start = () => {
+    stop();
+    if (!reduceMotion && inView && !paused && !document.hidden) timer = setInterval(() => go(1), DELAY);
+  };
+  const manual = (dir) => { go(dir); start(); };
+  car.querySelector(".prev").addEventListener("click", () => manual(-1));
+  car.querySelector(".next").addEventListener("click", () => manual(1));
+  car.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { paused = true; stop(); } });
+  car.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") { paused = false; start(); } });
+  track.addEventListener("touchstart", stop, { passive: true });
+  track.addEventListener("touchend", start, { passive: true });
+  car.addEventListener("focusin", (e) => { if (e.target.matches(":focus-visible")) { paused = true; stop(); } });
+  car.addEventListener("focusout", () => { paused = false; start(); });
+  document.addEventListener("visibilitychange", start);
+  new IntersectionObserver(([e]) => { inView = e.isIntersecting; start(); }, { threshold: 0.4 }).observe(car);
 });
 
 // Offerteformulier: zolang er geen server is, opent het de e-mail van de bezoeker met alles ingevuld
